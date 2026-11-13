@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #263238;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #173b64;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+/* Main navigation */
+nav {
+    background-color: #102a48;
+}
+
+.menu,
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu a,
+.menu button {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu button {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu a:hover,
+.menu button:hover {
+    background-color: #285c91;
+}
+
+.menu a:focus-visible,
+.menu button:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: -3px;
+}
+
+/* Hidden drop-down menu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 210px;
+    background-color: #173b64;
+    box-shadow: 0 5px 12px #0003;
+    z-index: 10;
+}
+
+/* Reveal on mouse hover or keyboard focus */
+.dropdown:hover > .submenu,
+.dropdown:focus-within > .submenu {
+    display: block;
+}
+
+/* Main page content */
+main {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #dce4ed;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #173b64;
+    border-bottom: 2px solid #dce4ed;
+    padding-bottom: 8px;
+}
+
+article {
+    padding: 10px 0;
+}
+
+section a {
+    color: #173b64;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    text-align: center;
+    background-color: #173b64;
+    color: white;
+    padding: 15px;
+}
+
+/* Small-screen layout */
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+        background-color: #204a75;
+    }
+
+    .submenu a {
+        padding-left: 35px;
+    }
+
+    section {
+        padding: 18px;
+    }
+}
